@@ -1,1 +1,1 @@
-# capstone-summer-green
+# Capstone Summer Green

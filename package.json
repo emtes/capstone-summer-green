@@ -1,0 +1,15 @@
+{
+    "name": "capstone-summer-green",
+    "version": "1.0.0",
+    "description": "My summer 2020 tinkering",
+    "main": "index.js",
+    "repository": "https://github.com/emtes/capstone-summer-green.git",
+    "author": "Enmanuel de la Nuez <edelanuez@pm.me>",
+    "license": "MIT",
+    "scripts": {
+        "fmt": "prettier --write ."
+    },
+    "devDependencies": {
+        "prettier": "2.0.5"
+    }
+}
