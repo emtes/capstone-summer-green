@@ -1,15 +1,54 @@
 {
-    "name": "capstone-summer-green",
-    "version": "1.0.0",
-    "description": "My summer 2020 tinkering",
-    "main": "index.js",
-    "repository": "https://github.com/emtes/capstone-summer-green.git",
-    "author": "Enmanuel de la Nuez <edelanuez@pm.me>",
-    "license": "MIT",
-    "scripts": {
-        "fmt": "prettier --write ."
-    },
-    "devDependencies": {
-        "prettier": "2.0.5"
-    }
+  "name": "summergreen",
+  "description": "Process monitoring and management CLI",
+  "version": "0.0.0",
+  "author": "Enmanuel de la Nuez @emtes",
+  "bin": {
+    "summergreen": "./bin/run"
+  },
+  "bugs": "https://github.com/emtes/capstone-summer-green/issues",
+  "dependencies": {
+    "@oclif/command": "^1.7.0",
+    "@oclif/config": "^1.16.0",
+    "@oclif/plugin-help": "^3.1.0"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1.22.2",
+    "@oclif/test": "^1.2.6",
+    "chai": "^4.2.0",
+    "globby": "^10.0.2",
+    "mocha": "^5.2.0",
+    "nyc": "^14.1.1",
+    "standard": "^14.3.4"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json",
+    "/src"
+  ],
+  "homepage": "https://github.com/emtes/capstone-summer-green",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "src/index.js",
+  "oclif": {
+    "commands": "./src/commands",
+    "bin": "summergreen",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "emtes/capstone-summer-green",
+  "scripts": {
+    "fmt": "standard src/**/* --fix",
+    "postpack": "rm -f oclif.manifest.json",
+    "prepack": "oclif-dev manifest && oclif-dev readme",
+    "test": "standard && nyc mocha --forbid-only \"test/**/*.test.js\"",
+    "version": "oclif-dev readme && git add README.md"
+  }
 }
