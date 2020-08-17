@@ -20,15 +20,19 @@ class StartCmd extends Command {
     let clusterSize
     switch (flags.max) {
       case true:
-        clusterSize = os.cpus().length()
+        clusterSize = os.cpus().length
         break
       default:
-        clusterSize = os.cpus().length() - 2
+        clusterSize = os.cpus().length - 2
     }
 
+    // TODO: Add safety by only using open ports
+    /** Starting point for ports passed as env to each fork */
+    let portEnvStart = 8000
     /** Fork workers */
     for (let i = 0; i < clusterSize; i++) {
-      cluster.fork()
+      cluster.fork({ PORT: portEnvStart })
+      portEnvStart += 1
     }
 
     /** Handle worker 'exit' */
