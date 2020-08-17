@@ -1,7 +1,7 @@
 {
   "name": "summergreen",
   "description": "Process monitoring and management CLI",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "author": "Enmanuel de la Nuez @emtes",
   "bin": {
     "summergreen": "./bin/run"
