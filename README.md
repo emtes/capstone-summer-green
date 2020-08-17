@@ -9,53 +9,33 @@ Process monitoring and management CLI
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 <!-- toc -->
-
-- [Usage](#usage)
-- [Commands](#commands)
+* [summergreen](#summergreen)
+* [Usage](#usage)
+* [Commands](#commands)
 <!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
-
 ```sh-session
 $ npm install -g summergreen
 $ summergreen COMMAND
 running command...
 $ summergreen (-v|--version|version)
-summergreen/0.0.0 linux-x64 node-v14.6.0
+summergreen/0.1.0 linux-x64 node-v14.6.0
 $ summergreen --help [COMMAND]
 USAGE
   $ summergreen COMMAND
 ...
 ```
-
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-
-- [`summergreen hello`](#summergreen-hello)
-- [`summergreen help [COMMAND]`](#summergreen-help-command)
-
-## `summergreen hello`
-
-Describe the command here
-
-```
-USAGE
-  $ summergreen hello
-
-OPTIONS
-  -n, --name=name  name to print
-
-DESCRIPTION
-  ...
-  Extra documentation goes here
-```
-
-_See code: [src/commands/hello.js](https://github.com/emtes/capstone-summer-green/blob/v0.0.0/src/commands/hello.js)_
+* [`summergreen help [COMMAND]`](#summergreen-help-command)
+* [`summergreen monitor`](#summergreen-monitor)
+* [`summergreen start FILE`](#summergreen-start-file)
 
 ## `summergreen help [COMMAND]`
 
@@ -74,4 +54,35 @@ OPTIONS
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.1.0/src/commands/help.ts)_
 
+## `summergreen monitor`
+
+Display system resource usage
+
+```
+USAGE
+  $ summergreen monitor
+
+OPTIONS
+  -s, --snapshot
+```
+
+_See code: [src/commands/monitor.js](https://github.com/emtes/capstone-summer-green/blob/v0.1.0/src/commands/monitor.js)_
+
+## `summergreen start FILE`
+
+Starts cluster with given JS files
+
+```
+USAGE
+  $ summergreen start FILE
+
+ARGUMENTS
+  FILE  File to execute
+
+OPTIONS
+  -l, --logging  Logs worker status and other details
+  -m, --max      Matches cluster size to num CPUs
+```
+
+_See code: [src/commands/start.js](https://github.com/emtes/capstone-summer-green/blob/v0.1.0/src/commands/start.js)_
 <!-- commandsstop -->
